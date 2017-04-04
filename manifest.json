@@ -1,0 +1,113 @@
+{
+    "id": "org.ekstep.carmath",
+    "ver": "1.0",
+    "author": "",
+    "type": "widget",
+    "title": "org.ekstep.carmath Plugin",
+    "description": "",
+    "publishedDate": "",
+    "editor": {
+        "main": "editor/plugin.js",
+        "dependencies": [{
+            "type": "plugin",
+            "plugin": "org.ekstep.colorpicker",
+            "ver": "1.0"
+        }],
+        "menu": [{
+            "id": "car_math",
+            "category": "main",
+            "type": "icon",
+            "toolTip": "Add Math Game",
+            "title": "Add Math Game",
+            "iconClass": "game icon",
+            "onclick": {
+                "id": "org.ekstep.carmath:create",
+                "data": {
+                    "type": "rect",
+                    "strokeWidth": 2,
+                    "x": 0,
+                    "y": 0,
+                    "w": 100,
+                    "h": 100,
+                    "fill": "",
+                    "stroke": "rgba(0,192,255,0.5)",
+                    "n1Range": "1-10",
+                    "n2Range": "1-10",
+                    "timelimit": 1,
+                    "qCount": 5,
+                    "operators": "+"
+
+                }
+            }
+        }],
+        "help": {
+            "src": "editor/help.md",
+            "dataType": "text"
+        },
+        "init-data": {
+            "type": "rect",
+            "strokeWidth": 2,
+            "x": 10,
+            "y": 10,
+            "w": 80,
+            "h": 80,
+            "fill": "",
+            "stroke": "rgba(0,192,255,0.5)",
+            "n1Range": "1-10",
+            "n2Range": "1-10",
+            "timelimit": 1,
+            "qCount": 5,
+            "operators": "+"
+
+        },
+        "configManifest": [{
+            "propertyName": "n1Range",
+            "title": "Range for first number",
+            "placeholder": "Enter comma separated range",
+            "description": "Number range for the first number",
+            "dataType": "input",
+            "valueType": "text",
+            "required": true,
+            "defaultValue": ""
+        }, {
+            "propertyName": "n2Range",
+            "title": "Range for second number",
+            "placeholder": "Enter comma separated range",
+            "description": "Number range for the second number",
+            "dataType": "input",
+            "valueType": "text",
+            "required": true,
+            "defaultValue": ""
+        }, {
+            "propertyName": "timelimit",
+            "title": "Time Duration(in minutes)",
+            "placeholder": "Enter a number for minutes",
+            "description": "Time limit to answer the questions",
+            "dataType": "input",
+            "valueType": "number",
+            "required": true,
+            "defaultValue": 1
+        }, {
+            "propertyName": "qCount",
+            "title": "Number of questions",
+            "placeholder": "Enter number of questions",
+            "description": "Number of questions to be displayed",
+            "dataType": "input",
+            "valueType": "number",
+            "required": true,
+            "defaultValue": ""
+        }, {
+            "propertyName": "operators",
+            "title": "Math operators for the questions",
+            "placeholder": "Enter comma separated operators",
+            "description": "Math operators to be used",
+            "dataType": "input",
+            "valueType": "text",
+            "required": true,
+            "defaultValue": ""
+        }]
+    },
+    "renderer": {
+        "main": "renderer/plugin.js"
+    }
+}
